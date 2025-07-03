@@ -1,17 +1,11 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-app.get('/', (req, res) => {
-  res.send('3...2...1...');
-});
-
-
-app.listen(port,()=>{
-  console.log(`Server is running at http://localhost:${port}`);
-});
-app.get('/1', (req, res) => {
-  res.send('Description');
-});
-app.get('bio', (req, res) => {
-  res.sendFile(__dirname+'/Guy1.html');
-});
+document.getElementByID('weatherForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  
+  var city=document.getElementByID('cityInput').value;
+  var apiKey='b2b02f68834360ebc586a5c014d332f0';
+  var apiUrl='https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial';
+  
+  fetch(apiUrl)
+     .then(response=> response.json())
+     .then(data => {
+         const weatherResult=document.getElementByID('weatherResult')
