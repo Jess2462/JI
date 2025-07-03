@@ -15,7 +15,7 @@ document.getElementByID('weatherForm').addEventListener('submit',function(e){
            <p>Weather: ${data.weather[0].description}</p> <!--Display the weather description-->
            <p>Humidity:${data.main.humidity}%</p> <!--Display the humidity percentage-->
            <p>Wind Speed:${data.wind.speed}mph </p> <!--Display the wind speed in miles per hour-->
-        ;
+      };
 })
 .catch(()=>{
   document.getElementByID('weatherResult').innerHTML='<p>Something went wrong. Please try again.</p>';
